@@ -1,0 +1,62 @@
+// Task 1
+// Составьте программу, которая создаёт список из 10 элементов и заполняет его случайными положительными однозначными числами.
+// Программа должна подсчитать и вывести на экран произведение всех значений элементов списка
+var list = [];
+var multiplication = 1;
+for (i = 0; i < 10; i++) {
+  
+  function randomInteger(min, max) {
+  let rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
+  }
+  
+  let a = randomInteger(1, 9);
+  list[i] = a
+  multiplication = multiplication * list[i]
+}
+console.log(multiplication)
+
+-----
+// Task 2
+// Составьте программу, которая создаёт список и заполняет его 100-и случайными числами из диапазона 1...999.
+// Программа должна вывести на экран максимальное и минимальное значения элементов списка.
+var list = [];
+for (i = 0; i < 100; i++) {
+  
+  function randomInteger(min, max) {
+  let rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
+  }
+  let a = randomInteger(1, 999);
+  list[i] = a
+}
+
+
+console.log(Math.min(...list))
+console.log(Math.max(...list))
+
+-----
+// Task 3
+// Составьте программу, которая создаёт список из 1000 элементов и 
+// заполняет его случайными положительными двузначными числами.
+// Затем с клавиатуры вводится целое число x. Программа должна вывести на экран 
+// количество элементов списка, содержащих значение x.
+var list = [];
+for (i = 0; i < 100; i++) {
+  
+  function randomInteger(min, max) {
+  let rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
+  }
+  let a = randomInteger(10, 99);
+  list[i] = a
+}
+console.log(list)
+let x = parseInt(prompt("Enter a number: "));
+
+let filteredList = list.filter(byCriteria);
+
+function byCriteria(value, index, array) {
+  return list.includes(12);
+}
+console.log(filteredList)
