@@ -1,0 +1,64 @@
+let menu = {
+width: 200,
+height: 300,
+title: "My menu"
+};
+
+
+
+function multiplyNumeric(obj) {
+for (let key in obj){
+if (typeof obj[key] == "number") {
+obj[key] = obj[key] * 2;
+
+}
+}
+}
+
+
+multiplyNumeric(menu)
+console.log(menu)
+
+function calc(a, b, oper){
+  switch (oper) {
+        case "+":
+            return (a + b);
+            break;
+        case "-":
+            return (a - b);
+            break;
+        case "*":
+            return (a * b);
+            break;
+        case "/":
+            return (a / b);
+            break;
+        default:
+            return "Invalid input";
+            break;
+    }
+}
+function testCalc(){
+  let testCases = [
+    [[1, 2,"+"], 3],
+    [[8, 2,"/"], 4],
+    [[2, 2,"*"], 4],
+    [[5, 3,"-"], 2],
+    [[1, 1, "^"], "Invalid"],
+    [[1, 1, "+"], "Error"],
+  ];
+
+  for (let oneCase of testCases){
+  let [params, expected] = oneCase;
+  let result = calc(...params);
+    if (result !== expected) {
+      console.log(`Ошибка в ${oneCase}. Ожидаемый результат ${expected} не равен ${result}`)
+    } else {
+        console.log(`Результат ${oneCase} равен ${result}`)
+    }
+  }
+
+    console.log("Все тесты прошли успешно!");
+}
+
+testCalc();
